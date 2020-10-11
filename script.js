@@ -38,6 +38,11 @@ function closeInputBox(){
     books2.style.cssText = 'z-index: 0';
     body.removeChild(overlay);
     shouldAdd=1;
+
+    document.querySelector('.title').value = "";
+    document.querySelector('.author').value = "";
+    document.querySelector('.pages').value = "";
+    document.querySelector('.read').value = "";
 }
 
 function openInputBox(){
@@ -50,6 +55,11 @@ function openInputBox(){
     books2.style.cssText = 'z-index: -2';
     body.appendChild(overlay);
     shouldAdd=0;
+
+    document.querySelector('.title').value = "";
+    document.querySelector('.author').value = "";
+    document.querySelector('.pages').value = "";
+    document.querySelector('.read').value = "";
 }
 
 
@@ -60,37 +70,38 @@ addbook.addEventListener('click',function(e){
     let pages = document.querySelector('.pages').value;
     let read = document.querySelector('.read').value;
 
-    if(Number(pages)===NaN){
+    if(isNaN(Number(pages))){
         alert('Pages should be in numbers!');
         closeInputBox();
     }else{
         pages = Number(pages);
+
+
+        if(read!='yes' && read!='no'){
+            alert('Answer in yes or no for read');
+            closeInputBox();
+        }else{
+            console.log(title + ' ' + pages + ' ' + author + ' ' + read);
+
+            if(read=='yes'){
+                read = true;
+            }else{
+                read = false;
+            }
+
+            let newBook = new Book(title,author,pages,read);
+            myLibrary.push(newBook);
+
+            document.querySelector('.title').value = "";
+            document.querySelector('.author').value = "";
+            document.querySelector('.pages').value = "";
+            document.querySelector('.read').value = "";
+            closeInputBox();
+
+            removeBooks();
+            showBooks();
+        }
     }
-
-    if(read!='yes' && read!='no'){
-        alert('Answer in yes or no for read');
-        closeInputBox();
-    }
-
-    console.log(title + ' ' + pages + ' ' + author + ' ' + read);
-
-    if(read=='yes'){
-        read = true;
-    }else{
-        read = false;
-    }
-
-    let newBook = new Book(title,author,pages,read);
-    myLibrary.push(newBook);
-
-    document.querySelector('.title').value = "";
-    document.querySelector('.author').value = "";
-    document.querySelector('.pages').value = "";
-    document.querySelector('.read').value = "";
-    closeInputBox();
-
-    removeBooks();
-    showBooks();
 });
 
 
