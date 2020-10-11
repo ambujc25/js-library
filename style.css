@@ -1,0 +1,196 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, rgb(172, 221, 250),rgb(119, 178, 196));
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.books2{
+
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    max-width: 1100px;
+    max-height: 550px;
+
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+
+    overflow: hidden;
+
+}
+
+.books{
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 80%;
+    margin: auto;
+
+}
+
+.book{
+    display: table;
+    white-space: nowrap;
+
+    background: rgb(253, 194, 194);
+    width: 100px;
+    height: 100px;
+    margin: 15px 15px;
+    padding: 20px;
+
+    border-radius: 5px;
+    box-shadow: 0 0 15px 7px rgba(0,0,0,0.1);
+
+    transition: transform 0.2s;
+    position: relative;
+
+}
+
+.closeBook{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    border-style:none;
+    cursor: pointer;
+
+    /*color: white;
+    border: 2px rgb(255, 255, 255) solid;
+    background-color: rgba(0,0,0,0.0);*/
+
+    transition: all 0.1s ease-in;
+}
+
+.closeBook:hover{
+    transform: scale(1.07);
+    /*background-color: white;
+    color: black;*/
+}
+
+.read2{
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+
+    border-style:none;
+    cursor:pointer;
+
+    /*color: white;
+    border: 2px rgb(255, 255, 255) solid;
+    background-color: rgba(0,0,0,0.0);*/
+
+    transition: all 0.1s ease-in;
+}
+
+.read2:hover{
+    transform: scale(1.07);
+    /*background-color: white;
+    color: black;*/
+}
+
+.book:hover{
+    box-shadow: 0 0 15px 7px rgba(255, 129, 129, 0.4);
+    transform: scale(1.05);
+}
+
+p{
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+
+}
+
+.add{
+    margin-bottom: 50px;
+    padding: 10px 20px 10px 20px;
+    background: rgb(193, 193, 255);
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 12px 3px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.add:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.takeInput{
+    background: rgb(214, 214, 214);
+    position: absolute;
+    top: 35%;
+    left: 40%;
+
+    width: 200px;
+    height: 250px;
+    padding: 40px;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.close{
+    position: absolute;
+    top:0;
+    right:0;
+    cursor: pointer;
+    background-color: rgb(212, 76, 76);
+    border-style: none;
+    padding: 5px 20px;
+    color: white;
+}
+
+.addbook{
+    margin-top: 30px;
+    padding: 10px 20px 10px 20px;
+    background: rgb(255, 255, 255);
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 0 12px 3px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.addbook:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.overlay{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+
+.hidden{
+    display: none;
+
+}
+
